@@ -2,6 +2,10 @@
 
 Outil gratuit pour envoyer rapidement le **titre** et l'**image** d'une carte Pokecardex vers le modèle Google Sheets utilisé pour l'import CSV Whatnot.
 
+## Tutoriel vidéo
+
+[Voir le tutoriel vidéo sur YouTube](https://youtu.be/f2418JTvVgk)
+
 ## Ce que fait l'outil
 
 Depuis `pokecardex.com/collection`, le bouton ajoute automatiquement :
@@ -100,10 +104,5 @@ Sans token, quelqu'un qui connaît l'URL de votre Web App pourrait essayer d'éc
 - Les images doivent être accessibles publiquement en `https://` pour l'import Whatnot [page:1].
 - Chaque utilisateur doit utiliser **son propre** Google Sheet, **son propre** Apps Script, **sa propre** URL Web App et **son propre** token.
 
-## Tutoriel vidéo
 
-[Voir le tutoriel vidéo sur YouTube](https://youtu.be/f2418JTvVgk)
 
-## Licence
-
-MIT
