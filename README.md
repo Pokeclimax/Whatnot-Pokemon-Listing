@@ -23,17 +23,24 @@ Le titre est construit à partir du :
 ## Installation rapide
 
 1. Ouvrez le modèle CSV officiel Whatnot et faites **Fichier > Créer une copie** dans Google Sheets [page:1].
-2. Dans `apps-script.gs`, renseignez :
+2. Récupérez le `SPREADSHEET_ID` dans l'URL de votre Google Sheet. C'est la partie entre `/d/` et `/edit`. Exemple : dans `https://docs.google.com/spreadsheets/d/abc123456789/edit`, le `SPREADSHEET_ID` est `abc123456789` [page:2].
+3. Dans `apps-script.gs`, renseignez :
    - `SPREADSHEET_ID`
    - `SHEET_NAME`
    - `EXPECTED_TOKEN`
-3. Déployez Apps Script en **Application Web** avec :
+4. Déployez Apps Script en **Application Web** avec :
    - **Exécuter en tant que :** Moi
    - **Qui a accès :** Tout le monde
-4. Dans `tampermonkey.user.js`, renseignez :
+5. Dans `tampermonkey.user.js`, renseignez :
    - `WEBAPP_URL`
    - `API_TOKEN`
-5. Ouvrez une carte sur Pokecardex et cliquez sur **Ajouter au Google Sheet**.
+6. Ouvrez une carte sur Pokecardex et cliquez sur **Ajouter au Google Sheet**.
+
+## Pourquoi utiliser un token
+
+Le Web App Google Apps Script est exposé via une URL publique pour pouvoir recevoir la requête envoyée par Tampermonkey. Le **token** sert donc de clé simple de vérification : le userscript envoie le token, et Apps Script refuse la requête si le token ne correspond pas.
+
+Sans token, une personne qui connaît l'URL du Web App pourrait essayer d'écrire dans votre Google Sheet. Il faut donc choisir un token privé, le garder identique dans `apps-script.gs` et `tampermonkey.user.js`, et ne pas publier votre vraie valeur sur GitHub.
 
 ## Workflow Whatnot
 
